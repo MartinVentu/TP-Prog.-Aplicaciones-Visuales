@@ -56,6 +56,16 @@
     <Compile Include="Entidades\Productos.cs" />
     <Compile Include="Entidades\ProductosCompuestos.cs" />
     <Compile Include="Entidades\Proveedores.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+    <Compile Include="Pantalla\frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantalla\frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositorios\DBHelper.cs" />
+    <Compile Include="Repositorios\repositorioBarrio.cs" />
     <Compile Include="Entidades\TiposDocumentos.cs" />
     <Compile Include="Entidades\TiposFacturas.cs" />
     <Compile Include="Entidades\UnidadesMedidas.cs" />
@@ -66,10 +76,23 @@
     <Compile Include="Pantalla\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pantalla\frmBarrios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantalla\frmBarrios.Designer.cs">
+      <DependentUpon>frmBarrios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicios\servicioBarrio.cs" />
     <EmbeddedResource Include="Pantalla\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla\frmBarrios.resx">
+      <DependentUpon>frmBarrios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,6 +103,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\TPPAV.csproj.AssemblyReference.cache" />
+    <None Include="obj\Release\TPPAV.csproj.AssemblyReference.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -92,6 +118,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

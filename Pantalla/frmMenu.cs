@@ -7,21 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TPPAV.Pantalla;
 
-namespace TPPAV
+namespace TPPAV.Pantalla
 {
-    public partial class Form1 : Form
+    public partial class frmMenu : Form
     {
-        public Form1()
+        public frmMenu()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmMenu frmMenu = new frmMenu();
-            frmMenu.Show();
         }
     }
 }
