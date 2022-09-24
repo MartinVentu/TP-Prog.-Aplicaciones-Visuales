@@ -28,5 +28,10 @@ namespace TPPAV.Servicios
                 return false;
             }
         }
+        public List<Barrios> consultarBArrios()
+        {
+            var barrios = repositorioBarrio.ConsultarBarrio();
+            return barrios;
+        }
     }
 }
