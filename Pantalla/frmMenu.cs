@@ -57,9 +57,10 @@ namespace TPPAV.Pantalla
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'bD3K3G10_2022DataSet.Barrios' Puede moverla o quitarla según sea necesario.
-            this.barriosTableAdapter.Fill(this.bD3K3G10_2022DataSet.Barrios);
+            // TODO: This line of code loads data into the 'bD3K3G10_2022DataSet.Vendedores' table. You can move, or remove it, as needed.
+            this.vendedoresTableAdapter.Fill(this.bD3K3G10_2022DataSet.Vendedores);
 
         }
     }
-}
+    }
+

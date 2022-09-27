@@ -19,5 +19,7 @@ namespace TPPAV.Entidades
         public Productos Producto { get; set; }
         public Proveedores Proveedor { get; set; }
         public DateTime Fecha_Ingreso { get; set; }
+        public int Cantidad_Actual { get; set; }
+        public int Cantidad_Inicial { get; set; }
     }
 }
