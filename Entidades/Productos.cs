@@ -15,6 +15,7 @@ namespace TPPAV.Entidades
         private ClasificacionesUsos clasificacion_Uso;
         private Proveedores proveedor;
 
+        
         public int Id_Producto { get; set; }
         public string Descripcion { get; set; }
         public UnidadesMedidas Unidad_medida { get; set; }

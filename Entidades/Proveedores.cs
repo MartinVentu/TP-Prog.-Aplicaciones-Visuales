@@ -15,6 +15,11 @@ namespace TPPAV.Entidades
         private string calle;
         private int nro_Calle;
         private string telefono;
+
+        public Proveedores()
+        {
+        }
+
         public Proveedores(string cuil, string apellido, string nombre, Barrios barrio, string calle, int nroCalle, string telefono)
         {
             Cuil = cuil;

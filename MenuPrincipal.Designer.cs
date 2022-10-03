@@ -62,6 +62,7 @@ namespace TPPAV
             this.listadosDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlMenu = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +78,8 @@ namespace TPPAV
             this.lotesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(686, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -298,12 +300,22 @@ namespace TPPAV
             this.lotesToolStripMenuItem.Name = "lotesToolStripMenuItem";
             this.lotesToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.lotesToolStripMenuItem.Text = "Lotes";
+            this.lotesToolStripMenuItem.Click += new System.EventHandler(this.lotesToolStripMenuItem_Click);
+            // 
+            // pnlMenu
+            // 
+            this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMenu.Location = new System.Drawing.Point(0, 24);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(686, 366);
+            this.pnlMenu.TabIndex = 1;
             // 
             // MenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuPrincipal";
@@ -350,5 +362,6 @@ namespace TPPAV
         private ToolStripMenuItem listadosDeClientesToolStripMenuItem;
         private ToolStripMenuItem estadísticasToolStripMenuItem;
         private ToolStripMenuItem lotesToolStripMenuItem;
+        private Panel pnlMenu;
     }
 }

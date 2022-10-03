@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPPAV.Pantalla;
 
 namespace TPPAV
 {
@@ -34,6 +35,20 @@ namespace TPPAV
             ventanavendedor.Show();
         }
 
-
+        private void lotesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new frmLotes());
+        }
+        private void AbrirFormEnPanel(object Formhijo)
+        {
+            if (this.pnlMenu.Controls.Count > 0)
+                this.pnlMenu.Controls.RemoveAt(0);
+            Form fh = Formhijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.pnlMenu.Controls.Add(fh);
+            this.pnlMenu.Tag = fh;
+            fh.Show();
+        }
     }
 }
