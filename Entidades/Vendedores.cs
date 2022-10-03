@@ -19,6 +19,19 @@ namespace TPPAV.Entidades
         private string apellido;
         private ComisionesVendedores comision;
 
+        public Vendedores(string nroDocumento, TiposDocumentos tipoDocumento, DateTime fechaIngreso, DateTime fechaNacimiento, string telefono, string nombre, string apellido, ComisionesVendedores comision)
+        {
+
+            Numero_Doc = nroDocumento;
+            TiposDocumentos = tipoDocumento;
+            Fecha_Ingreso = fechaIngreso;
+            Fecha_Nacimiento = fechaNacimiento;
+            Telefono = telefono;
+            Nombre = nombre;
+            Apellido = apellido;
+            Comision = comision;
+
+        }
         public string Numero_Doc { get; set; }
         public TiposDocumentos TiposDocumentos { get; set; }
         public DateTime Fecha_Ingreso { get; set; }
