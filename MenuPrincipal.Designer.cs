@@ -62,6 +62,8 @@ namespace TPPAV
             this.listadosDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnBuscarLote = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAgregarLote = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -297,10 +299,26 @@ namespace TPPAV
             // 
             // lotesToolStripMenuItem
             // 
+            this.lotesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnBuscarLote,
+            this.btnAgregarLote});
             this.lotesToolStripMenuItem.Name = "lotesToolStripMenuItem";
             this.lotesToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.lotesToolStripMenuItem.Text = "Lotes";
-            this.lotesToolStripMenuItem.Click += new System.EventHandler(this.lotesToolStripMenuItem_Click);
+            // 
+            // btnBuscarLote
+            // 
+            this.btnBuscarLote.Name = "btnBuscarLote";
+            this.btnBuscarLote.Size = new System.Drawing.Size(180, 22);
+            this.btnBuscarLote.Text = "Buscar Lote";
+            this.btnBuscarLote.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // btnAgregarLote
+            // 
+            this.btnAgregarLote.Name = "btnAgregarLote";
+            this.btnAgregarLote.Size = new System.Drawing.Size(180, 22);
+            this.btnAgregarLote.Text = "Agregar Lote";
+            this.btnAgregarLote.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // pnlMenu
             // 
@@ -363,5 +381,7 @@ namespace TPPAV
         private ToolStripMenuItem estadísticasToolStripMenuItem;
         private ToolStripMenuItem lotesToolStripMenuItem;
         private Panel pnlMenu;
+        private ToolStripMenuItem btnBuscarLote;
+        private ToolStripMenuItem btnAgregarLote;
     }
 }

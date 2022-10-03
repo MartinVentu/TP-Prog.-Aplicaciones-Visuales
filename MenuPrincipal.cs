@@ -35,10 +35,6 @@ namespace TPPAV
             ventanavendedor.Show();
         }
 
-        private void lotesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AbrirFormEnPanel(new frmLotes());
-        }
         private void AbrirFormEnPanel(object Formhijo)
         {
             if (this.pnlMenu.Controls.Count > 0)
@@ -49,6 +45,16 @@ namespace TPPAV
             this.pnlMenu.Controls.Add(fh);
             this.pnlMenu.Tag = fh;
             fh.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new frmLotes());
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new frmAgregarLote()); 
         }
     }
 }
