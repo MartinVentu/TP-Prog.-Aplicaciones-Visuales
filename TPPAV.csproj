@@ -119,6 +119,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\repositorioClasificacionesUso.cs" />
+    <Compile Include="Repositorios\repositorioDetalleFactura.cs" />
+    <Compile Include="Repositorios\repositorioFactura.cs" />
     <Compile Include="Repositorios\repositorioLotes.cs" />
     <Compile Include="Servicios\servicioBarrio.cs" />
     <Compile Include="Servicios\servicioClasificacionesUso.cs" />

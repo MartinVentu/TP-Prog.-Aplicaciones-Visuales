@@ -15,7 +15,7 @@ namespace TPPAV.Repositorios
         {
             try
             {
-                string secuenciaSQL = $"INSERT INTO Lotes (Id_Producto,Cuil_Proveedor,Fecha_Ingreso,Cantidad_Actual,Cantidad_Inicial VALUES ('{lote.Producto.Id_Producto}','{lote.Proveedor.Cuil}','{lote.Fecha_Ingreso}','{lote.Cantidad_Inicial}','{lote.Cantidad_Inicial}')";
+                string secuenciaSQL = $"INSERT INTO Lotes (Id_Producto,Cuil_Proveedor,Fecha_Ingreso,Cantidad_Actual,Cantidad_Inicial) VALUES ('{lote.Producto.Id_Producto}','{lote.Proveedor.Cuil}','{lote.Fecha_Ingreso}','{lote.Cantidad_Inicial}','{lote.Cantidad_Inicial}')";
                 var regLote = DBHelper.GetDBHelper().EjecutarSQL(secuenciaSQL);
                 return regLote;
             }

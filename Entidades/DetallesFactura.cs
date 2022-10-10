@@ -15,7 +15,7 @@ namespace TPPAV.Entidades
 
         public Facturas Factura { get; set; }
         public Lotes Lote { get; set; }
-        public int CantidadProductos { get;set; }
+        public float Precio_Productos { get;set; }
         public int Cantidad_Productos { get; set; }
     }
 }
