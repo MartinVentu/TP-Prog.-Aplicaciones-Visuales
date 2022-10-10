@@ -65,5 +65,18 @@ namespace TPPAV.Repositorios
                 throw new ApplicationException("No se pudo actualizar el lote");
             }
         }
+        public int EliminarLote(Lotes lote)
+        {
+            try
+            {
+                string sentenciaSql = $"UPDATE Lotes SET  Cantidad_Actual = 0  WHERE Id_Lote = '{lote.Id_Lote}' ";
+                var rdo = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
+                return rdo;
+            }
+            catch
+            {
+                throw new ApplicationException("No se pudo eliminar el lote");
+            }
+        }
     }
 }

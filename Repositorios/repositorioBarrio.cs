@@ -46,6 +46,33 @@ namespace TPPAV.Repositorios
                 throw new ApplicationException("No se pudo obtener los barrios");
             }
         }
+        public int ActualizarBarrio(Barrios barrio)
+        {
+            try
+            {
+                string sentenciaSql = $"UPDATE Barrios SET Nombre = '{barrio.Nombre}' WHERE Id_Barrio = '{barrio.Id_barrio'";
+                var rdo = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
+                return rdo;
+            }
+            catch
+            {
+                throw new ApplicationException("No se pudo actualizar el barrio");
+            }
+        }
+
+        public int EliminarBarrio(Barrios barrio)
+        {
+            try
+            {
+                string sentenciaSql = $"DELETE FROM Barrios WHERE  Id_Barrio = '{barrio.Id_barrio}'";
+                var rdo = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
+                return rdo;
+            }
+            catch
+            {
+                throw new ApplicationException("No se pudo eliminar el barrio");
+            }
+        }
 
     }
 }

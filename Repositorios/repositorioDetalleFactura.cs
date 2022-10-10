@@ -47,5 +47,33 @@ namespace TPPAV.Repositorios
                 throw new ApplicationException("No se pudo obtener los detalles");
             }
         }
+        public int ActualizarDetalle(DetallesFactura detalle)
+        {
+            try
+            {
+                string sentenciaSql = $"UPDATE DetallesFactura SET Id_Lote = '{detalle.Lote.Id_Lote}' , Precio_Productos = '{detalle.Precio_Productos}', Cantidad_Productos = '{detalle.Cantidad_Productos}'" +
+                    $" WHERE Numero_Factura = '{detalle.Factura.Numero_Factura}' AND Tipo_Factura = '{detalle.Factura.TiposFacturas.IdTipo_Factura}' AND Id_Lote = '{detalle.Lote.Id_Lote}'";
+                var rdo = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
+                return rdo;
+            }
+            catch
+            {
+                throw new ApplicationException("No se pudo actualizar el detalle ");
+            }
+        }
+
+        public int EliminarDetalle(DetallesFactura detalle)
+        {
+            try
+            {
+                string sentenciaSql = $"DELETE FROM DetallesFactura  WHERE Numero_Factura = '{detalle.Factura.Numero_Factura}' AND Tipo_Factura = '{detalle.Factura.TiposFacturas.IdTipo_Factura}' AND Id_Lote = '{detalle.Lote.Id_Lote}'";
+                var rdo = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
+                return rdo;
+            }
+            catch
+            {
+                throw new ApplicationException("No se pudo eliminar el detalle");
+            }
+        }
     }
 }

@@ -15,8 +15,8 @@ namespace TPPAV.Repositorios
             try
             {
                 string secuenciaSQL = $"INSERT INTO Clasificaciones_Usos (Descripcion) VALUES ('{clasificacion.Descripcion}')";
-                var regBarrio = DBHelper.GetDBHelper().EjecutarSQL(secuenciaSQL);
-                return regBarrio;
+                var regClasificacion = DBHelper.GetDBHelper().EjecutarSQL(secuenciaSQL);
+                return regClasificacion;
             }
             catch
             {
@@ -44,5 +44,33 @@ namespace TPPAV.Repositorios
                 throw new ApplicationException("No se pudo obtener las clasificaciones de uso");
             }
         }
+        public int ActualizarClasificacion(ClasificacionesUsos clasificacion)
+        {
+            try
+            {
+                string sentenciaSql = $"UPDATE Clasificaciones_Usos SET Descripcion = '{clasificacion.Descripcion}' WHERE Id_Clasificacion = '{clasificacion.Id_Clasificacion}'";
+                var rdo = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
+                return rdo;
+            }
+            catch
+            {
+                throw new ApplicationException("No se pudo actualizar la clasificacion de uso");
+            }
+        }
+
+        public int EliminarClasificacion(ClasificacionesUsos clasificacion)
+        {
+            try
+            {
+                string sentenciaSql = $"DELETE FROM Clasificaciones_Usos  WHERE Id_Clasificacion = '{clasificacion.Id_Clasificacion}'";
+                var rdo = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
+                return rdo;
+            }
+            catch
+            {
+                throw new ApplicationException("No se pudo eliminar la clasificacion de uso");
+            }
+        }
+
     }
 }
