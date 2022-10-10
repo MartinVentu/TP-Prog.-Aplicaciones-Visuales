@@ -35,9 +35,85 @@ namespace TPPAV.Repositorios
                 {
                     Lotes lote= new Lotes();
                     lote.Id_Lote = Convert.ToInt32(fila["Id_Lote"]);
-                    lote.Producto = new Productos();
                     lote.Producto.Id_Producto = Convert.ToInt32(fila["Id_Producto"]);
-                    lote.Proveedor = new Proveedores();
+                    lote.Proveedor.Cuil = fila["Cuil_Proveedor"].ToString();
+                    lote.Fecha_Ingreso = Convert.ToDateTime(fila["Fecha_Ingreso"]);
+                    lote.Cantidad_Actual = Convert.ToInt32(fila["Cantidad_Actual"]);
+                    lote.Cantidad_Inicial = Convert.ToInt32(fila["Cantidad_Inicial"]);
+                    lotes.Add(lote);
+
+                }
+                return lotes;
+            }
+            catch
+            {
+                throw new ApplicationException("No se pudo obtener los lotes");
+            }
+        }
+        public List<Lotes> ConsultarLotesDisponibles()
+        {
+            try
+            {
+                List<Lotes> lotes = new List<Lotes>();
+                string secuenciaSQL = $"SELECT * FROM Lotes WHERE Cantidad_ACtual != 0";
+                var tabla = DBHelper.GetDBHelper().ConsultaSQL(secuenciaSQL);
+                foreach (DataRow fila in tabla.Rows)
+                {
+                    Lotes lote = new Lotes();
+                    lote.Id_Lote = Convert.ToInt32(fila["Id_Lote"]);
+                    lote.Producto.Id_Producto = Convert.ToInt32(fila["Id_Producto"]);
+                    lote.Proveedor.Cuil = fila["Cuil_Proveedor"].ToString();
+                    lote.Fecha_Ingreso = Convert.ToDateTime(fila["Fecha_Ingreso"]);
+                    lote.Cantidad_Actual = Convert.ToInt32(fila["Cantidad_Actual"]);
+                    lote.Cantidad_Inicial = Convert.ToInt32(fila["Cantidad_Inicial"]);
+                    lotes.Add(lote);
+
+                }
+                return lotes;
+            }
+            catch
+            {
+                throw new ApplicationException("No se pudo obtener los lotes");
+            }
+        }
+        public List<Lotes> ConsultarLotes(Proveedores proveedor)
+        {
+            try
+            {
+                List<Lotes> lotes = new List<Lotes>();
+                string secuenciaSQL = $"SELECT * FROM Lotes WHERE Cuil_Proveedor = '{proveedor.Cuil}'";
+                var tabla = DBHelper.GetDBHelper().ConsultaSQL(secuenciaSQL);
+                foreach (DataRow fila in tabla.Rows)
+                {
+                    Lotes lote = new Lotes();
+                    lote.Id_Lote = Convert.ToInt32(fila["Id_Lote"]);
+                    lote.Producto.Id_Producto = Convert.ToInt32(fila["Id_Producto"]);
+                    lote.Proveedor.Cuil = fila["Cuil_Proveedor"].ToString();
+                    lote.Fecha_Ingreso = Convert.ToDateTime(fila["Fecha_Ingreso"]);
+                    lote.Cantidad_Actual = Convert.ToInt32(fila["Cantidad_Actual"]);
+                    lote.Cantidad_Inicial = Convert.ToInt32(fila["Cantidad_Inicial"]);
+                    lotes.Add(lote);
+
+                }
+                return lotes;
+            }
+            catch
+            {
+                throw new ApplicationException("No se pudo obtener los lotes");
+            }
+        }
+        public List<Lotes> ConsultarLotes(int mes, int anio)
+        {
+            try
+            {
+                List<Lotes> lotes = new List<Lotes>();
+                string secuenciaSQL = $"SELECT * FROM Lotes WHERE MONTH(Fecha_Ingreso) = '{mes}' AND YEAR(FECHA_Ingreso) = '{anio}'";
+                var tabla = DBHelper.GetDBHelper().ConsultaSQL(secuenciaSQL);
+                foreach (DataRow fila in tabla.Rows)
+                {
+                    Lotes lote = new Lotes();
+                    lote.Id_Lote = Convert.ToInt32(fila["Id_Lote"]);
+                    lote.Producto.Id_Producto = Convert.ToInt32(fila["Id_Producto"]);
                     lote.Proveedor.Cuil = fila["Cuil_Proveedor"].ToString();
                     lote.Fecha_Ingreso = Convert.ToDateTime(fila["Fecha_Ingreso"]);
                     lote.Cantidad_Actual = Convert.ToInt32(fila["Cantidad_Actual"]);

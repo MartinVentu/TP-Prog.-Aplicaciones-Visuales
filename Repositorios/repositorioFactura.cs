@@ -155,5 +155,18 @@ namespace TPPAV.Repositorios
                 throw new ApplicationException("No se pudo obtener las facturas");
             }
         }
+        public int ActualizarFactura(Facturas factura)
+        {
+            try
+            {
+                string sentenciaSql = $"UPDATE Facturas SET Precio_Total = '{factura.Precio_Total}' WHERE Numero_Factura = '{factura.Numero_Factura}' AND Tipo_Factura = '{factura.TiposFacturas.IdTipo_Factura}' ";
+                var rdo = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
+                return rdo;
+            }
+            catch
+            {
+                throw new ApplicationException("No se pudo actualizar la factura ");
+            }
+        }
     }
 }

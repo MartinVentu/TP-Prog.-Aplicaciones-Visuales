@@ -29,8 +29,46 @@ namespace TPPAV.Servicios
         }
         public List<Lotes> ConsultarLotes()
         {
-            var clasificaciones = repositorio.ConsultarLotes();
-            return clasificaciones;
+            var lotes = repositorio.ConsultarLotes();
+            return lotes;
         }
+        public List<Lotes> ConsultarLotesDisponibles()
+        {
+            var lotes = repositorio.ConsultarLotesDisponibles();
+            return lotes;
+        }
+        public List<Lotes> ConsultarLotes(Proveedores proveedor)
+        {
+            var lotes = repositorio.ConsultarLotes(proveedor);
+            return lotes;
+        }
+        public List<Lotes> ConsultarLotes(int mes, int anio)
+        {
+            var lotes = repositorio.ConsultarLotes(mes,anio);
+            return lotes;
+        }
+        public bool ActualizarLote(Lotes lote)
+        {
+            if (repositorio.ActualizarLote(lote) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool EliminarLote(Lotes lote)
+        {
+            if (repositorio.EliminarLote(lote) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

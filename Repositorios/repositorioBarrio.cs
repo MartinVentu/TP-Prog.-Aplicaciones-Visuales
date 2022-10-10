@@ -50,7 +50,7 @@ namespace TPPAV.Repositorios
         {
             try
             {
-                string sentenciaSql = $"UPDATE Barrios SET Nombre = '{barrio.Nombre}' WHERE Id_Barrio = '{barrio.Id_barrio'";
+                string sentenciaSql = $"UPDATE Barrios SET Nombre = '{barrio.Nombre}' WHERE Id_Barrio = '{barrio.Id_barrio}'";
                 var rdo = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
                 return rdo;
             }

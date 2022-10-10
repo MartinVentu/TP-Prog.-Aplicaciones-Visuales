@@ -54,6 +54,16 @@ namespace TPPAV.Servicios
             var facturas = repositorio.ConsultarFacturas(vendedor);
             return facturas;
         }
-
+        public bool ActualizarFactura(Facturas factura)
+        {
+            if (repositorio.ActualizarFactura(factura) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

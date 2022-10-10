@@ -33,5 +33,27 @@ namespace TPPAV.Servicios
             var clasificaciones = repositorio.ConsultarClasificacion();
             return clasificaciones;
         }
+        public bool ActualizarClasificacion(ClasificacionesUsos clasificacion)
+        {
+            if (repositorio.ActualizarClasificacion(clasificacion) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool EliminarClasificacion(ClasificacionesUsos clasificacion)
+        {
+            if (repositorio.EliminarClasificacion(clasificacion) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -33,5 +33,27 @@ namespace TPPAV.Servicios
             var barrios = repositorioBarrio.ConsultarBarrio();
             return barrios;
         }
+        public bool ActualizarBarrio(Barrios barrio)
+        {
+            if (repositorioBarrio.ActualizarBarrio(barrio) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool EliminarBarrio(Barrios barrio)
+        {
+            if (repositorioBarrio.EliminarBarrio(barrio) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

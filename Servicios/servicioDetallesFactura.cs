@@ -33,5 +33,27 @@ namespace TPPAV.Servicios
             var detalles = repositorio.ConsultarDetalles(factura);
             return detalles;
         }
+        public bool ActualizarDetalle(DetallesFactura detalle)
+        {
+            if (repositorio.ActualizarDetalle(detalle) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool EliminarDetalle(DetallesFactura detalle)
+        {
+            if (repositorio.EliminarDetalle(detalle) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
