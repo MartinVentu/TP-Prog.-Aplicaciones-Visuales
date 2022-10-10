@@ -124,6 +124,8 @@
     <Compile Include="Repositorios\repositorioLotes.cs" />
     <Compile Include="Servicios\servicioBarrio.cs" />
     <Compile Include="Servicios\servicioClasificacionesUso.cs" />
+    <Compile Include="Servicios\servicioDetallesFactura.cs" />
+    <Compile Include="Servicios\servicioFacturas.cs" />
     <Compile Include="Servicios\servicioLotes.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
