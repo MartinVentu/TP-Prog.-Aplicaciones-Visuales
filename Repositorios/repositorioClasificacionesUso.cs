@@ -44,6 +44,27 @@ namespace TPPAV.Repositorios
                 throw new ApplicationException("No se pudo obtener las clasificaciones de uso");
             }
         }
+        public List<ClasificacionesUsos> ConsultarClasificacion(ClasificacionesUsos Clasificacion)
+        {
+            try
+            {
+                List<ClasificacionesUsos> clasificaciones = new List<ClasificacionesUsos>();
+                string secuenciaSQL = $"SELECT * FROM Clasificaciones_Usos WHERE Descripcion = '{Clasificacion.Descripcion}'";
+                var tabla = DBHelper.GetDBHelper().ConsultaSQL(secuenciaSQL);
+                foreach (DataRow fila in tabla.Rows)
+                {
+                    ClasificacionesUsos clasificacion = new ClasificacionesUsos();
+                    clasificacion.Id_Clasificacion = Convert.ToInt32(fila["Id_Clasificacion"]);
+                    clasificacion.Descripcion = fila["Descripcion"].ToString();
+                    clasificaciones.Add(clasificacion);
+                }
+                return clasificaciones;
+            }
+            catch
+            {
+                throw new ApplicationException("No se pudo obtener las clasificaciones de uso");
+            }
+        }
         public int ActualizarClasificacion(ClasificacionesUsos clasificacion)
         {
             try

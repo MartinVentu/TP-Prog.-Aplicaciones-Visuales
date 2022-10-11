@@ -56,5 +56,6 @@ namespace TPPAV
         {
             AbrirFormEnPanel(new frmAgregarLote()); 
         }
+
     }
 }

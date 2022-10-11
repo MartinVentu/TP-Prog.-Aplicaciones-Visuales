@@ -33,6 +33,11 @@ namespace TPPAV.Servicios
             var clasificaciones = repositorio.ConsultarClasificacion();
             return clasificaciones;
         }
+        public List<ClasificacionesUsos> ConsultarClasificaciones(ClasificacionesUsos clasificacion)
+        {
+            var clasificaciones = repositorio.ConsultarClasificacion(clasificacion);
+            return clasificaciones;
+        }
         public bool ActualizarClasificacion(ClasificacionesUsos clasificacion)
         {
             if (repositorio.ActualizarClasificacion(clasificacion) > 0)

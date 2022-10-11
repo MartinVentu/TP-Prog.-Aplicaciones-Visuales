@@ -12,10 +12,10 @@ using TPPAV.Servicios;
 
 namespace TPPAV.Pantalla
 {
-    public partial class frmBarrios : Form
+    public partial class frmAgregarBarrios : Form
     {
         private servicioBarrio servicio;
-        public frmBarrios()
+        public frmAgregarBarrios()
         {
             InitializeComponent();
         }

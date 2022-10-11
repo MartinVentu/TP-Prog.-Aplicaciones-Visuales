@@ -65,6 +65,7 @@ namespace TPPAV
             this.btnBuscarLote = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAgregarLote = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -309,14 +310,14 @@ namespace TPPAV
             // btnBuscarLote
             // 
             this.btnBuscarLote.Name = "btnBuscarLote";
-            this.btnBuscarLote.Size = new System.Drawing.Size(180, 22);
+            this.btnBuscarLote.Size = new System.Drawing.Size(142, 22);
             this.btnBuscarLote.Text = "Buscar Lote";
             this.btnBuscarLote.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // btnAgregarLote
             // 
             this.btnAgregarLote.Name = "btnAgregarLote";
-            this.btnAgregarLote.Size = new System.Drawing.Size(180, 22);
+            this.btnAgregarLote.Size = new System.Drawing.Size(142, 22);
             this.btnAgregarLote.Text = "Agregar Lote";
             this.btnAgregarLote.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -328,11 +329,21 @@ namespace TPPAV
             this.pnlMenu.Size = new System.Drawing.Size(686, 366);
             this.pnlMenu.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(481, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -383,5 +394,6 @@ namespace TPPAV
         private Panel pnlMenu;
         private ToolStripMenuItem btnBuscarLote;
         private ToolStripMenuItem btnAgregarLote;
+        private Button button1;
     }
 }

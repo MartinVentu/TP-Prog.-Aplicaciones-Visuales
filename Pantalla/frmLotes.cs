@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPPAV.Entidades;
+using TPPAV.Servicios;
 
 namespace TPPAV.Pantalla
 {
     public partial class frmLotes : Form
     {
+        private servicioLotes servicioLotes;
         public frmLotes()
         {
             InitializeComponent();
@@ -19,29 +22,52 @@ namespace TPPAV.Pantalla
 
         private void frmLotes_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'bD3K3G10_2022DataSet.Proveedores' table. You can move, or remove it, as needed.
-            this.proveedoresTableAdapter.Fill(this.bD3K3G10_2022DataSet.Proveedores);
-            // TODO: This line of code loads data into the 'bD3K3G10_2022DataSet.Productos' table. You can move, or remove it, as needed.
-            this.productosTableAdapter.Fill(this.bD3K3G10_2022DataSet.Productos);
-            // TODO: This line of code loads data into the 'bD3K3G10_2022DataSet.Lotes' table. You can move, or remove it, as needed.
-            this.lotesTableAdapter.Fill(this.bD3K3G10_2022DataSet.Lotes);
-
-
+           servicioLotes = new servicioLotes();
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            try
+            
+            if(dtgLote.SelectedRows.Count != 0)
             {
-                this.proveedoresTableAdapter.FillBy(this.bD3K3G10_2022DataSet.Proveedores);
+                if(Convert.ToBoolean(MessageBox.Show($"Desea eliminar el lote '{dtgLote.SelectedColumns[0] }","Confirmacion",MessageBoxButtons.YesNo)))
+                {
+                    Lotes lote = new Lotes();
+                    lote.Id_Lote = Convert.ToInt32(dtgLote.CurrentRow.Cells[0].Value);
+                    servicioLotes.EliminarLote(lote);
+                }
             }
-            catch (System.Exception ex)
+            else
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                MessageBox.Show("Debe seleccionar un lote a eliminar");
             }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dtgLote.SelectedRows.Count != 0)
+            {
+                if (Convert.ToBoolean(MessageBox.Show($"Desea Modificar el lote '{dtgLote.SelectedColumns[0]}", "Confirmacion", MessageBoxButtons.YesNo)))
+                {
+                    Lotes lote = new Lotes();
+                    lote.Id_Lote = Convert.ToInt32(dtgLote.CurrentRow.Cells[0].Value);
+                    servicioLotes.ActualizarLote(lote);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un lote a eliminar");
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
 
         }
 
-      
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

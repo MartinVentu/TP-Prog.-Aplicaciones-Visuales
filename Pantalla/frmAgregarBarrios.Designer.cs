@@ -1,6 +1,6 @@
 ﻿namespace TPPAV.Pantalla
 {
-    partial class frmBarrios
+    partial class frmAgregarBarrios
     {
         /// <summary>
         /// Required designer variable.
